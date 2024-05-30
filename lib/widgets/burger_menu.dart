@@ -1,3 +1,4 @@
+import 'package:final_project/localization/app_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -8,22 +9,22 @@ class BurgerMenu extends StatelessWidget {
       child: ListView(
         children: [
           DrawerHeader(
-            child: Text('Menu'),
+            child: Text(AppLocalizations.of(context).getTranslate('menu')),
           ),
           ListTile(
-            title: Text('Home'),
+            title: Text(AppLocalizations.of(context).getTranslate('home')),
             onTap: () => context.go('/home'),
           ),
           ListTile(
-            title: Text('Settings'),
+            title: Text(AppLocalizations.of(context).getTranslate('settings')),
             onTap: () => context.go('/settings'),
           ),
           ListTile(
-            title: Text('Boarding'),
+            title: Text(AppLocalizations.of(context).getTranslate('board')),
             onTap: () => context.go('/boarding'),
           ),
           ListTile(
-            title: Text('Upload Photo'),
+            title: Text(AppLocalizations.of(context).getTranslate('upload_photo')),
             onTap: () => context.go('/upload'),
           ),
         ],
