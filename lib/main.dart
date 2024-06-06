@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:final_project/app.dart';
 import 'package:final_project/cubit/app_cubit.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'cubit/app_state.dart';
 import 'localization/app_localization.dart';
@@ -26,7 +25,7 @@ void main() async {
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
   // Uygulamayı başlat
-  runApp(ProviderScope(child: MainApp()));
+  runApp(const MainApp());
 }
 
 class MainApp extends StatelessWidget {
