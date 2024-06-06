@@ -1,30 +1,25 @@
-import 'package:final_project/themes/app_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:final_project/app.dart';
-import 'package:final_project/cubit/app_cubit.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'cubit/app_cubit.dart';
 import 'cubit/app_state.dart';
 import 'localization/app_localization.dart';
 import 'router.dart';
+import 'themes/app_themes.dart';
 
 void main() async {
-  // Flutter framework'ünü başlat
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Bildirim iznini kontrol et ve gerekirse iste
   await Permission.notification.isDenied.then((value) {
     if (value) {
       Permission.notification.request();
     }
   });
 
-  // Cihazın yönünü yalnızca dikey olarak ayarlayın
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
-  // Uygulamayı başlat
   runApp(const MainApp());
 }
 
