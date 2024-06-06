@@ -7,6 +7,7 @@ class PhotoUploadScreen extends StatelessWidget {
   final ImagePicker _picker = ImagePicker();
 
   Future<void> _pickImage() async {
+    // ignore: unused_local_variable
     final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
     // İşlem yapılacak.
   }
