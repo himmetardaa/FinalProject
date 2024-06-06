@@ -19,8 +19,12 @@ dependencies:
   image_picker: ^0.8.4+5
   path_provider: ^2.0.11
   permission_handler: ^11.3.1
+<<<<<<< HEAD
   flutter_riverpod: ^2.5.1
   google_fonts: ^6.2.1
+=======
+  flutter_native_splash: ^2.4.0
+>>>>>>> 46053713627c24a6eb1eb15f1cc3abe4a3d94e44
 
 dev_dependencies:
   flutter_test:
@@ -33,3 +37,9 @@ flutter:
   assets:
     - assets/lang/en.json
     - assets/lang/tr.json
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/splash.png
+  android: true
+  ios: true
