@@ -7,6 +7,6 @@ class BoardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
         child:
-            Text(AppLocalizations.of(context).getTranslate('board')));
+            Text(AppLocalizations.of(context).getTranslate("boarding_screen")));
   }
 }
