@@ -7,6 +7,7 @@ import 'package:final_project/screens/boarding_screen.dart';
 import 'package:final_project/screens/photo_upload_screen.dart';
 
 import 'localization/app_localization.dart';
+import 'screens/textoimage_screen.dart';
 import 'widgets/burger_menu.dart';
 
 final GoRouter router = GoRouter(
@@ -41,6 +42,10 @@ final GoRouter router = GoRouter(
         GoRoute(
           path: '/upload',
           builder: (context, state) => PhotoUploadScreen(),
+        ),
+        GoRoute(
+          path: '/textoimage',
+          builder: (context, state) => TexttoImage(),
         ),
       ],
     ),

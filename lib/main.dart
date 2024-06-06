@@ -2,12 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'cubit/app_cubit.dart';
 import 'cubit/app_state.dart';
 import 'localization/app_localization.dart';
 import 'router.dart';
 import 'themes/app_themes.dart';
+
+// Cache Provider
+final cacheProvider = ChangeNotifierProvider((ref) => CacheProvider());
+
+class CacheProvider extends ChangeNotifier {
+  final Map<String, String> _cache = {};
+
+  void addToCache(String key, String value) {
+    _cache[key] = value;
+    notifyListeners();
+  }
+
+  String? getFromCache(String key) {
+    return _cache[key];
+  }
+
+  void clearCache() {
+    _cache.clear();
+    notifyListeners();
+  }
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +42,7 @@ void main() async {
 
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
-  runApp(const MainApp());
+  runApp(ProviderScope(child: MainApp()));
 }
 
 class MainApp extends StatelessWidget {
