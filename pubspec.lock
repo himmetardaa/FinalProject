@@ -89,8 +89,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
-<<<<<<< HEAD
-=======
   csslib:
     dependency: transitive
     description:
@@ -99,7 +97,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
->>>>>>> 46053713627c24a6eb1eb15f1cc3abe4a3d94e44
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -224,7 +221,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.5.9"
-<<<<<<< HEAD
   google_fonts:
     dependency: "direct main"
     description:
@@ -233,7 +229,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.2.1"
-=======
   html:
     dependency: transitive
     description:
@@ -242,7 +237,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.15.4"
->>>>>>> 46053713627c24a6eb1eb15f1cc3abe4a3d94e44
   http:
     dependency: "direct main"
     description:
