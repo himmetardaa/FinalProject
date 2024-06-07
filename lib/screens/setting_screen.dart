@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:go_router/go_router.dart';
 
 import '../cubit/app_cubit.dart';
 import '../cubit/app_state.dart';
@@ -7,6 +9,14 @@ import '../localization/app_localization.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key? key}) : super(key: key);
+
+  Future<void> _resetOnboarding(BuildContext context) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.clear();
+
+    // Navigate back to the splash screen
+    context.go('/');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +62,7 @@ class SettingsScreen extends StatelessWidget {
                                   .read<AppCubit>()
                                   .changeLanguage(language: "tr");
                             },
-                      child: const Text("Turkçe"),
+                      child: const Text("Türkçe"),
                     ),
                   ],
                 ),
@@ -71,6 +81,11 @@ class SettingsScreen extends StatelessWidget {
                   onChanged: (bool value) {
                     context.read<AppCubit>().changeDarkMode(darkMode: value);
                   },
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () => _resetOnboarding(context),
+                  child: Text(AppLocalizations.of(context).getTranslate("reset_onboarding")),
                 ),
               ],
             ),

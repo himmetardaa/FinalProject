@@ -10,27 +10,6 @@ import 'localization/app_localization.dart';
 import 'router.dart';
 import 'themes/app_themes.dart';
 
-// Cache Provider
-final cacheProvider = ChangeNotifierProvider((ref) => CacheProvider());
-
-class CacheProvider extends ChangeNotifier {
-  final Map<String, String> _cache = {};
-
-  void addToCache(String key, String value) {
-    _cache[key] = value;
-    notifyListeners();
-  }
-
-  String? getFromCache(String key) {
-    return _cache[key];
-  }
-
-  void clearCache() {
-    _cache.clear();
-    notifyListeners();
-  }
-}
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 

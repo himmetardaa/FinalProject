@@ -6,8 +6,7 @@ import 'package:final_project/screens/setting_screen.dart';
 import 'package:final_project/screens/splash_screen.dart';
 import 'package:final_project/screens/boarding_screen.dart';
 import 'package:final_project/screens/photo_upload_screen.dart';
-
-import 'localization/app_localization.dart';
+import 'package:final_project/localization/app_localization.dart';
 import 'screens/textoimage_screen.dart';
 import 'widgets/burger_menu.dart';
 
@@ -26,27 +25,27 @@ final GoRouter router = GoRouter(
       routes: [
         GoRoute(
           path: '/',
-          builder: (context, state) => SplashScreen(),
+          builder: (context, state) => const SplashScreen(),
         ),
         GoRoute(
           path: '/home',
-          builder: (context, state) => HomeScreen(),
+          builder: (context, state) =>  HomeScreen(),
         ),
         GoRoute(
           path: '/settings',
-          builder: (context, state) => SettingsScreen(),
+          builder: (context, state) => const SettingsScreen(),
         ),
         GoRoute(
           path: '/boarding',
-          builder: (context, state) => BoardingScreen(),
+          builder: (context, state) => const BoardingScreen(),
         ),
         GoRoute(
           path: '/upload',
-          builder: (context, state) => PhotoUploadScreen(),
+          builder: (context, state) =>  PhotoUploadScreen(),
         ),
         GoRoute(
           path: '/textoimage',
-          builder: (context, state) => TexttoImage(),
+          builder: (context, state) =>  TexttoImage(),
         ),
         GoRoute(
           path: '/cache',
