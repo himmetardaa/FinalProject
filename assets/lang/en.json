@@ -62,6 +62,10 @@
     "set_new_pass": "New password set successfully",
     "error_pass": "An error occurred while updating password",
     "error_pass_match": "Password doesnt match",
-    "upload_photo": "Upload Photo"
+    "upload_photo": "Upload Photo",
+    "enter_prompt": "Enter your prompt here...",
+    "no_image" : "No Image has been generated yet.",
+    "generate" : "Generate",
+    "clear" : "Clear"
   }
   

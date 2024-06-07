@@ -5,6 +5,7 @@ import 'package:final_project/services/api_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../localization/app_localization.dart';
 
 // ignore: must_be_immutable
 class TexttoImage extends ConsumerWidget {
@@ -12,6 +13,7 @@ class TexttoImage extends ConsumerWidget {
   TextEditingController textController = TextEditingController();
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    var localizations = AppLocalizations.of(context);
     final fWatch = ref.watch(api_provider);
     final fRead = ref.read(api_provider);
 
@@ -72,7 +74,7 @@ class TexttoImage extends ConsumerWidget {
                                 height: 20,
                               ),
                               Text(
-                                'No Image has been generated yet.',
+                                localizations.getTranslate('no_image'),
                                 style: TextStyle(
                                     color: Colors.grey[400],
                                     fontSize: 13,
@@ -102,7 +104,7 @@ class TexttoImage extends ConsumerWidget {
                       cursorColor: Colors.white,
                       maxLines: 5,
                       decoration: InputDecoration(
-                          hintText: 'Enter your prompt here...',
+                          hintText: localizations.getTranslate('enter_prompt'),
                           hintStyle: TextStyle(
                               color: Colors.grey[400],
                               fontSize: 14,
@@ -140,7 +142,7 @@ class TexttoImage extends ConsumerWidget {
                                     BorderRadius.all(Radius.circular(12.0))),
                             child: fWatch.isSearching == false
                                 ? Text(
-                                    'Generate',
+                                    localizations.getTranslate('generate'),
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 18,
@@ -170,7 +172,7 @@ class TexttoImage extends ConsumerWidget {
                               borderRadius:
                                   BorderRadius.all(Radius.circular(12.0))),
                           child: Text(
-                            'Clear',
+                            localizations.getTranslate('clear'),
                             style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
