@@ -7,28 +7,32 @@ class BurgerMenu extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: [
-          DrawerHeader(
+          const DrawerHeader(
             child: Text('Menu'),
           ),
           ListTile(
-            title: Text('Home'),
+            title: const Text('Home'),
             onTap: () => context.go('/home'),
           ),
           ListTile(
-            title: Text('Settings'),
+            title: const Text('Settings'),
             onTap: () => context.go('/settings'),
           ),
           ListTile(
-            title: Text('Boarding'),
+            title: const Text('Boarding'),
             onTap: () => context.go('/boarding'),
           ),
           ListTile(
-            title: Text('Upload Photo'),
+            title: const Text('Upload Photo'),
             onTap: () => context.go('/upload'),
           ),
           ListTile(
             title: const Text('Text to Image'),
             onTap: () => context.go('/textoimage'),
+          ),
+          ListTile(
+            title: const Text('Cache Screen'),
+            onTap: () => context.go('/cache'),
           ),
         ],
       ),

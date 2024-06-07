@@ -1,20 +1,29 @@
-import 'package:path_provider/path_provider.dart';
 import 'dart:io';
+import 'package:path_provider/path_provider.dart';
 
 class CacheService {
-  Future<void> writeData(String data) async {
-    final directory = await getApplicationDocumentsDirectory();
-    final file = File('${directory.path}/data.txt');
-    await file.writeAsString(data);
+  Future<void> saveImageToCache(String fileName, File image) async {
+    try {
+      final Directory appCacheDir = await getApplicationCacheDirectory();
+      final File file = File("${appCacheDir.path}/$fileName");
+      await file.writeAsBytes(await image.readAsBytes(), flush: true);
+    } catch (e) {
+      print('Error saving image to cache: $e');
+    }
   }
 
-  Future<String> readData() async {
+  Future<File?> readImageFromCache(String fileName) async {
     try {
-      final directory = await getApplicationDocumentsDirectory();
-      final file = File('${directory.path}/data.txt');
-      return await file.readAsString();
+      final Directory appCacheDir = await getApplicationCacheDirectory();
+      final File file = File("${appCacheDir.path}/$fileName");
+      if (await file.exists()) {
+        return file;
+      } else {
+        return null;
+      }
     } catch (e) {
-      return 'Error reading data';
+      print('Error reading image from cache: $e');
+      return null;
     }
   }
 }

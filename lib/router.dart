@@ -1,3 +1,4 @@
+import 'package:final_project/screens/cache_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:final_project/screens/home_screen.dart';
@@ -46,6 +47,10 @@ final GoRouter router = GoRouter(
         GoRoute(
           path: '/textoimage',
           builder: (context, state) => TexttoImage(),
+        ),
+        GoRoute(
+          path: '/cache',
+          builder: (context, state) => CacheScreen(),
         ),
       ],
     ),
