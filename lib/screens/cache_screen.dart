@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import '../localization/app_localization.dart';
 import '../services/cache_service.dart';
 
 class CacheScreen extends StatefulWidget {
@@ -11,26 +12,43 @@ class CacheScreen extends StatefulWidget {
 
 class _CacheScreenState extends State<CacheScreen> {
   final CacheService _cacheService = CacheService();
-  String _cacheData = "No data";
+  String _cacheData = '';
   File? _image;
 
   @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _cacheData = AppLocalizations.of(context).getTranslate('no_image');
+  }
+
+  @override
   Widget build(BuildContext context) {
+    var localizations = AppLocalizations.of(context);
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Cache Screen'),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            _image != null
-                ? kIsWeb
-                    ? Image.network(_image!.path,
-                        height: 200) // Web için Image.network
-                    : Image.file(_image!, height: 200) // Mobil için Image.file
-                : const Text('No image selected'),
-            // Resim yoksa mesaj
+            Container(
+              width: 300,
+              height: 300,
+              color: Colors.grey[800],
+              child: _image != null
+                  ? kIsWeb
+                      ? Image.network(_image!.path,
+                          height: 200,
+                          fit: BoxFit.cover) // Web için Image.network
+                      : Image.file(_image!,
+                          height: 200,
+                          fit: BoxFit.cover) // Mobil için Image.file
+                  : Center(
+                      child: Text(
+                        _cacheData,
+                        style: const TextStyle(color: Colors.white),
+                        textAlign: TextAlign.center,
+                      ),
+                    ), // Resim yoksa mesaj
+            ),
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () async {
@@ -40,16 +58,21 @@ class _CacheScreenState extends State<CacheScreen> {
                 if (pickedFile != null) {
                   setState(() {
                     _image = File(pickedFile.path);
-                    _cacheData = "Image selected";
+                    // _cacheData = "Image selected";
                   });
                   // Seçilen resmi önbelleğe kaydetme
                   await _cacheService.saveImageToCache(
                       "cached_image.jpg", _image!);
                 }
               },
-              child: const Text('Select Image'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.purple,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+              ),
+              child: Text(localizations.getTranslate('select_image')),
             ),
-
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () async {
                 // Önbellekten resmi okuma
@@ -62,14 +85,22 @@ class _CacheScreenState extends State<CacheScreen> {
                   });
                 } else {
                   setState(() {
-                    _cacheData = "No image in cache";
+                    // _cacheData = "No image in cache";
                   });
                 }
               },
-              child: const Text('Read from Cache'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+              ),
+              child: Text(localizations.getTranslate('read_cache')),
             ),
             const SizedBox(height: 20),
-            Text(_cacheData),
+            Text(
+              _cacheData,
+              style: const TextStyle(color: Colors.white),
+            ),
           ],
         ),
       ),

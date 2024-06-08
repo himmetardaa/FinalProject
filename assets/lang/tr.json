@@ -65,5 +65,10 @@
   "enter_prompt": "Buraya metninizi girin...",
   "no_image": "Henüz bir resim oluşturulmadı.",
   "generate": "Oluştur",
-  "clear": "Temizle"
+  "clear": "Temizle",
+  "select_image": "Resim Seçiniz",
+  "read_cache": "Hafızadan Getir",
+  "upload_photo": "Fotoğraf Yükle",
+  "cache": "Hafıza",
+  "texttoimage": "Yazıdan Resime Dönüştürme"
 }

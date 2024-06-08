@@ -66,6 +66,11 @@
     "enter_prompt": "Enter your prompt here...",
     "no_image" : "No Image has been generated yet.",
     "generate" : "Generate",
-    "clear" : "Clear"
+    "clear" : "Clear",
+    "select_image" : "Select Image",
+    "read_cache" : "Read From Cache",
+    "cache": "Cache",
+    "texttoimage" : "Text to Image AI"
+    
   }
   

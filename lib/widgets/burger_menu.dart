@@ -1,37 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../localization/app_localization.dart';
+
 class BurgerMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var localizations = AppLocalizations.of(context);
     return Drawer(
       child: ListView(
         children: [
-          const DrawerHeader(
-            child: Text('Menu'),
+          DrawerHeader(
+            child: Text(localizations.getTranslate('menu')),
           ),
           ListTile(
-            title: const Text('Home'),
+            title: Text(localizations.getTranslate('home')),
             onTap: () => context.go('/home'),
           ),
           ListTile(
-            title: const Text('Settings'),
+            title: Text(localizations.getTranslate('settings')),
             onTap: () => context.go('/settings'),
           ),
           ListTile(
-            title: const Text('Boarding'),
+            title: Text('Boarding'),
             onTap: () => context.go('/boarding'),
           ),
           ListTile(
-            title: const Text('Upload Photo'),
+            title: Text(localizations.getTranslate('upload_photo')),
             onTap: () => context.go('/upload'),
           ),
           ListTile(
-            title: const Text('Text to Image'),
+            title: Text(localizations.getTranslate('texttoimage')),
             onTap: () => context.go('/textoimage'),
           ),
           ListTile(
-            title: const Text('Cache Screen'),
+            title: Text(localizations.getTranslate('cache')),
             onTap: () => context.go('/cache'),
           ),
         ],
