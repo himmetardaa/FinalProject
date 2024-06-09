@@ -21,10 +21,10 @@ class BurgerMenu extends StatelessWidget {
             title: Text(localizations.getTranslate('settings')),
             onTap: () => context.go('/settings'),
           ),
-          ListTile(
-            title: Text('Boarding'),
-            onTap: () => context.go('/boarding'),
-          ),
+          // ListTile(
+          //   title: Text('Boarding'),
+          //   onTap: () => context.go('/boarding'),
+          // ),
           ListTile(
             title: Text(localizations.getTranslate('upload_photo')),
             onTap: () => context.go('/upload'),

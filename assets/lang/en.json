@@ -1,5 +1,5 @@
 {
-    "appTitle": "Your Project Name",
+    "appTitle": "Final Project",
     "homeScreenTitle": "Home",
     "settingsScreenTitle": "Settings",
     "boardingScreenTitle": "Welcome",
@@ -70,7 +70,8 @@
     "select_image" : "Select Image",
     "read_cache" : "Read From Cache",
     "cache": "Cache",
-    "texttoimage" : "Text to Image AI"
+    "texttoimage" : "Text to Image AI",
+    "menu" : "Menu"
     
   }
   

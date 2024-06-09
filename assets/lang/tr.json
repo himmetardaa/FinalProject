@@ -1,5 +1,5 @@
 {
-  "appTitle": "Ananın amı",
+  "appTitle": "Final Projesi",
   "homeScreenTitle": "Ana Menü",
   "settingsScreenTitle": "Ayarlar",
   "boardingScreenTitle": "Hoşgeldin",
@@ -70,5 +70,7 @@
   "read_cache": "Hafızadan Getir",
   "upload_photo": "Fotoğraf Yükle",
   "cache": "Hafıza",
-  "texttoimage": "Yazıdan Resime Dönüştürme"
+  "texttoimage": "Yazıdan Resime Dönüştürme",
+  "menu" : "Menü"
+
 }

@@ -82,11 +82,6 @@ class SettingsScreen extends StatelessWidget {
                     context.read<AppCubit>().changeDarkMode(darkMode: value);
                   },
                 ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () => _resetOnboarding(context),
-                  child: Text(AppLocalizations.of(context).getTranslate("reset_onboarding")),
-                ),
               ],
             ),
           ),

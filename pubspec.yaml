@@ -39,6 +39,8 @@ flutter:
     - assets/onboarding1.png
     - assets/onboarding2.png
     - assets/onboarding3.png
+    - assets/splash_config.json
+    - assets/images/splash.png
 
 flutter_native_splash:
   color: "#ffffff"
